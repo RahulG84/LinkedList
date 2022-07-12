@@ -10,5 +10,7 @@ public class MainMethod {
         ll.popLast();
         System.out.println();
         ll.show();
+        System.out.println();
+        ll.searchNode(30);
     }
 }
