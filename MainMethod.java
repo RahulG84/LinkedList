@@ -7,10 +7,11 @@ public class MainMethod {
         ll.addLast(70);
         ll.insertBetween(56,70,30);
         ll.show();
-        ll.popLast();
+        //ll.popLast();
         System.out.println();
         ll.show();
-        System.out.println();
         ll.searchNode(30);
+        ll.insertAfterSearch(30,40);
+        ll.show();
     }
 }

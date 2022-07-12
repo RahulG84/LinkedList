@@ -61,41 +61,57 @@ public class LL {
             newNode.next = temp;
         }
     }
-    public void pop(){
-        if(head == null){
+
+    public void pop() {
+        if (head == null) {
             System.out.println("List is empty");
         }
         head = head.next;
     }
-    public void popLast(){
-        if(head == null){
+
+    public void popLast() {
+        if (head == null) {
             System.out.println("List is empty");
             return;
         }
-        if(head.next == null){
+        if (head.next == null) {
             head = null;
             return;
         }
         Node secondLast = head;
         Node lastNode = head.next;
-        while (lastNode.next != null){
+        while (lastNode.next != null) {
             lastNode = lastNode.next;
             secondLast = secondLast.next;
         }
         secondLast.next = null;
     }
-    public void searchNode(int data) {
+
+    public boolean searchNode(int data) {
         if (head == null) {
             System.out.println("List is empty");
         }
         Node currNode = head;
         while (currNode.data != data) {
             if (currNode.next == null) {
-                return;
             }
             currNode = currNode.next;
         }
-        System.out.println("Search found for "+data);
+        System.out.println("Search found for " + data);
+        return true;
+    }
+
+    public void insertAfterSearch(int element, int data) {
+        Node currNode = head;
+        if (searchNode(element)) {
+            while (currNode.data != element) {
+                currNode = currNode.next;
+            }
+            Node node1 = new Node(data);
+            Node temp = currNode.next;
+            currNode.next = node1;
+            node1.next = temp;
+        }
     }
 }
 
