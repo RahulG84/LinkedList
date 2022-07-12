@@ -15,14 +15,14 @@ public class LL {
         head = t;
         size++;
     }
+
     public void addLast(int data) {
         Node newNode = new Node(data);
         newNode.data = data;
         newNode.next = null;
         if (size == 0) {
             head = tail = newNode;
-        }
-        else {
+        } else {
             tail.next = newNode;
             tail = newNode;
         }
@@ -34,12 +34,32 @@ public class LL {
             System.out.println("List Is Empty");
             return;
         }
-            Node temp = head;
-            while (temp != null) {
-                System.out.print(temp.data + " ");
-                temp = temp.next;
-            }
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
         System.out.println("NULL");
+    }
+
+    public void insertBetween(int element1, int element2, int data) {
+        if (head == null || head.next == null) {
+            System.out.println("List is empty");
+        }
+
+        Node currNode = head;
+        while (currNode.data != element1 || currNode.next.data != element2) {
+            if (currNode.next.next == null) {
+                break;
+            }
+            currNode = currNode.next;
+        }
+        if (currNode.data == element1 && currNode.next.data == element2) {
+            Node newNode = new Node(data);
+            Node temp = currNode.next;
+            currNode.next = newNode;
+            newNode.next = temp;
         }
     }
+}
 
