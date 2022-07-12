@@ -7,5 +7,8 @@ public class MainMethod {
         ll.addLast(70);
         ll.insertBetween(56,70,30);
         ll.show();
+        ll.pop();
+        System.out.println();
+        ll.show();
     }
 }
