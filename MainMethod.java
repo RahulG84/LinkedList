@@ -13,5 +13,10 @@ public class MainMethod {
         ll.searchNode(30);
         ll.insertAfterSearch(30,40);
         ll.show();
+        System.out.println("Size = " +ll.getSize());
+        System.out.println();
+        ll.deleteAfterSearch(40);
+        ll.show();
+        System.out.println("Size = " +ll.getSize());
     }
 }

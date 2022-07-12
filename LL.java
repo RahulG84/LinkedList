@@ -111,7 +111,27 @@ public class LL {
             Node temp = currNode.next;
             currNode.next = node1;
             node1.next = temp;
+            size++;
         }
+    }
+    public void deleteAfterSearch(int data) {
+        if(searchNode(data)) {
+            if(head.data == data) {
+                head = head.next;
+                return;
+            }
+            Node currNode = head;
+            while(currNode.next.data != data) {
+                currNode = currNode.next;
+            }
+            Node temp = currNode.next.next;
+            currNode.next = temp;
+        }
+        size--;
+    }
+    public int getSize() {
+        System.out.println();
+        return size;
     }
 }
 
